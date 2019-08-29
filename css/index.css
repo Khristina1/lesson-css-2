@@ -1,0 +1,134 @@
+/*  робимо спочатку мобільну версію */
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Indie+Flower&display=swap');
+:root{
+    --accent-color: #1C16CE;
+    --font-color:black;
+    --font-family:'Fjalla One', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    max-width:980px;
+    margin:auto;
+}
+ /* margin : перше значення вгорі і внизу друге зліва і справа */
+header nav .logo{
+    font-family: 'Indie Flower', cursive;
+    font-size: 3rem;
+    margin: 1rem 0;
+    text-align:center;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    }
+header nav .menu{
+    display:flex;
+    padding:0;
+    list-style-type:none;
+    justify-content:space-around;
+}
+header nav .menu li a{
+text-decoration: none;
+color: var(--font-color);
+text-transform: uppercase;
+border:1px solid transparent;
+padding: 13px;
+}
+header nav .menu li a:hover{
+border:1px solid var(--accent-color);
+}
+/* код для компютерної версії більше ніж 600 пікселів */
+@media (min-width: 600px){
+header nav {
+    display:flex;
+    align-items: center;
+}
+header nav .menu{
+    flex:1;
+}
+}
+header .banner{
+    background-image: url(../img/tesla-model-x-black.jpg);
+background-position: center;
+background-size:cover;
+    height:500px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+}
+header .banner h1{
+font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    margin: 1rem 0;
+    text-align:center;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+main .product img{
+width:100%;
+display:block;
+}
+main .product .product-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+@media (min-width: 600px){
+    main .product-list{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+    }
+}
+@media (min-width:900px){
+    main .product-list{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 980px){
+    main .product-list{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+.button-b {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+
